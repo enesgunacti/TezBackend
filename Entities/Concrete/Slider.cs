@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Menu: IEntity
+    public class Slider: IEntity
     {
-        public int MenuId { get; set; }
-        public string MenuName { get; set; }
-        public string MenuUrl { get; set; }
+        public int SliderId { get; set; }
+        public string SliderPicture { get; set; }
     }
 }

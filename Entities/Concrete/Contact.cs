@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Menu: IEntity
+    public class Contact:IEntity
     {
-        public int MenuId { get; set; }
-        public string MenuName { get; set; }
-        public string MenuUrl { get; set; }
+        public int ContactId { get; set; }
+        public string ContactName { get; set; }
+        public string ContactDetail { get; set; }
     }
 }
