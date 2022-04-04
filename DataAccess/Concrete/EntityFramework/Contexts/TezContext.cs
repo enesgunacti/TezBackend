@@ -12,8 +12,11 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-I3FVNCJ;Database=Tez;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-I3FVNCJ;Database=TezBackend;Trusted_Connection=true");
         }
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Product> Products { get; set; } /// ÜRÜNLER VERİ TABANI BAĞLANTI İÇİN
+        public DbSet<Category> Categories { get; set; } /// KATEGORİLER VERİ TABANI BAĞLANTI İÇİN
+        public DbSet<Contact> Contacts { get; set; } /// İLETİŞİM BİLGİLERİ VERİ TABANI BAĞLANTI İÇİN
+
     }
 }
