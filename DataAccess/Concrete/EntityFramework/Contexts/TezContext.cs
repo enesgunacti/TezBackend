@@ -14,9 +14,13 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         {
             optionsBuilder.UseSqlServer(@"Server=DESKTOP-I3FVNCJ;Database=TezBackend;Trusted_Connection=true");
         }
-        public DbSet<Product> Products { get; set; } /// ÜRÜNLER VERİ TABANI BAĞLANTI İÇİN
-        public DbSet<Category> Categories { get; set; } /// KATEGORİLER VERİ TABANI BAĞLANTI İÇİN
-        public DbSet<Contact> Contacts { get; set; } /// İLETİŞİM BİLGİLERİ VERİ TABANI BAĞLANTI İÇİN
+        public DbSet<Product> Products { get; set; } /// ÜRÜNLER VERİ TABANI BAĞLANTISI İÇİN
+        public DbSet<Category> Categories { get; set; } /// KATEGORİLER VERİ TABANI BAĞLANTISI İÇİN
+        public DbSet<Contact> Contacts { get; set; } /// İLETİŞİM BİLGİLERİ VERİ TABANI BAĞLANTISI İÇİN
+        public DbSet<Document> Documents { get; set; } /// BELGELER VERİ TABANI BAĞLANTISI İÇİN
+        public DbSet<Menu> Menus { get; set; } /// MENÜLER VERİ TABANI BAĞLANTISI İÇİN
+        public DbSet<Page> Pages { get; set; } /// SAYFA İÇERİKLERİ VERİ TABANI BAĞLANTISI İÇİN
+        public DbSet<Slider> Sliders { get; set; } /// SLİDER RESİMLER VERİ TABANI BAĞLANTISI İÇİN
 
     }
 }

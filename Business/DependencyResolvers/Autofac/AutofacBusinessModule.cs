@@ -30,6 +30,26 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<ContactManager>().As<IContactService>();
             builder.RegisterType<EfContactDal>().As<IContactDal>();
 
+            /////////////////////////////////////////////////////////////// BELGE BİLGİLERİ İÇİN
+
+            builder.RegisterType<DocumentManager>().As<IDocumentService>();
+            builder.RegisterType<EfDocumentDal>().As<IDocumentDal>();
+
+            /////////////////////////////////////////////////////////////// MENÜ BİLGİLERİ İÇİN
+
+            builder.RegisterType<MenuManager>().As<IMenuService>();
+            builder.RegisterType<EfMenuDal>().As<IMenuDal>();
+
+            /////////////////////////////////////////////////////////////// SAYFA DETAY BİLGİLERİ İÇİN
+
+            builder.RegisterType<PageManager>().As<IPageService>();
+            builder.RegisterType<EfPageDal>().As<IPageDal>();
+
+            /////////////////////////////////////////////////////////////// SLİDER ESİM BİLGİLERİ İÇİN
+
+            builder.RegisterType<SliderManager>().As<ISliderService>();
+            builder.RegisterType<EfSliderDal>().As<ISliderDal>();
+
 
         }
     }
