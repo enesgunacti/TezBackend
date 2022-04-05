@@ -45,10 +45,15 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<PageManager>().As<IPageService>();
             builder.RegisterType<EfPageDal>().As<IPageDal>();
 
-            /////////////////////////////////////////////////////////////// SLİDER ESİM BİLGİLERİ İÇİN
+            /////////////////////////////////////////////////////////////// SLİDER RESİM BİLGİLERİ İÇİN
 
             builder.RegisterType<SliderManager>().As<ISliderService>();
             builder.RegisterType<EfSliderDal>().As<ISliderDal>();
+
+            /////////////////////////////////////////////////////////////// KULLANICI BİLGİLERİ İÇİN
+
+            builder.RegisterType<UserManager>().As<IUserService>();
+            builder.RegisterType<EfUserDal>().As<IUserDal>();
 
 
         }

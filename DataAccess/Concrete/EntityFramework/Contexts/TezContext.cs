@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Entities.Concrete;
+using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,9 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         public DbSet<Menu> Menus { get; set; } /// MENÜLER VERİ TABANI BAĞLANTISI İÇİN
         public DbSet<Page> Pages { get; set; } /// SAYFA İÇERİKLERİ VERİ TABANI BAĞLANTISI İÇİN
         public DbSet<Slider> Sliders { get; set; } /// SLİDER RESİMLER VERİ TABANI BAĞLANTISI İÇİN
+        public DbSet<User> Users { get; set; } /// KULLANICI VERİ TABANI BAĞLANTISI İÇİN
+        public DbSet<OperationClaim> OperationClaims { get; set; } /// KULLANICI VERİ TABANI BAĞLANTISI İÇİN
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; } /// KULLANICI VERİ TABANI BAĞLANTISI İÇİN
 
     }
 }
