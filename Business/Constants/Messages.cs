@@ -48,6 +48,13 @@ namespace Business.Constants
         public static string SliderDeleted = "Slider Resim Başarıyla Silindi";
         public static string SliderUpdated = "Slider Resim Başarıyla Güncellendi";
 
+        ////////////////////////////////////////////////////////////////////////////
 
+        public static string UserNotFound = "Kullanıcı Bulunamadı";
+        public static string PasswordError = "Şifre Hatalı";
+        public static string SuccessfulLogin = "Sisteme Giriş Başarılı";
+        public static string UserAlreadyExist = "Bu Kullanıcı Zaten Mevcut";
+        public static string UserRegistered = "Kullanıcı Başarıyla Kaydedildi";
+        internal static string AccessTokenCreated = "Access Token Başarıyla Oluşturuldu";
     }
 }
