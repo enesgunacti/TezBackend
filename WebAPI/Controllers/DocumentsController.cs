@@ -22,9 +22,9 @@ namespace WebAPI.Controllers
             var result = _documentService.GetList();
             if (result.Success)
             {
-                return (Ok(result.Data));
+                return (Ok(result));
             }
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
         [HttpPost("add")]
@@ -33,9 +33,9 @@ namespace WebAPI.Controllers
             var result = _documentService.Add(document);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
         [HttpPost("update")]
@@ -44,20 +44,31 @@ namespace WebAPI.Controllers
             var result = _documentService.Update(document);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
-        [HttpDelete("delete")]
-        public IActionResult Delete(Document document)
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int documentId)
         {
-            var result = _documentService.Delete(document);
+            var result = _documentService.GetById(documentId);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return (Ok(result));
             }
-            return BadRequest(result.Message);
+            return BadRequest(result);
+        }
+
+        [HttpDelete("{documentId}")]
+        public IActionResult Delete(int documentId)
+        {
+            var result = _documentService.Delete(documentId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
     }
 }

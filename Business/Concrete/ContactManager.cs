@@ -25,10 +25,20 @@ namespace Business.Concrete
             return new SuccessResult(Messages.ContactAdded);
         }
 
-        public IResult Delete(Contact contact)
+        public IResult Delete(int contactId)
         {
-            _contacDal.Delete(contact);
-            return new SuccessResult(Messages.ContactDeleted);
+            var contact = _contacDal.Get(x => x.ContactId == contactId);
+            if (contact != null)
+            {
+                _contacDal.Delete(contact);
+                return new SuccessResult(Messages.ContactDeleted);
+            }
+            return new ErrorResult("Hata Oluştu");
+        }
+
+        public IDataResult<Contact> GetById(int contactId)
+        {
+            return new SuccessDataResult<Contact>(_contacDal.Get(c => c.ContactId == contactId));
         }
 
         public IDataResult<List<Contact>> GetList()

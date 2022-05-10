@@ -15,7 +15,7 @@ namespace Business.Abstract
 
         IResult Add(Slider slider);
         IResult Update(Slider slider);
-        IResult Delete(Slider slider);
+        IResult Delete(int sliderId);
 
     }
 }

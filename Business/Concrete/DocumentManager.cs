@@ -26,10 +26,21 @@ namespace Business.Concrete
             return new SuccessResult(Messages.DocumentAdded);
         }
 
-        public IResult Delete(Document document)
+
+        public IResult Delete(int documentId)
         {
-            _documentDal.Delete(document);
-            return new SuccessResult(Messages.DocumentDeleted);
+            var document = _documentDal.Get(x => x.DocumentId == documentId);
+            if (document != null)
+            {
+                _documentDal.Delete(document);
+                return new SuccessResult(Messages.DocumentDeleted);
+            }
+            return new ErrorResult("Hata Oluştu");
+        }
+
+        public IDataResult<Document> GetById(int documentId)
+        {
+            return new SuccessDataResult<Document>(_documentDal.Get(c => c.DocumentId == documentId));
         }
 
         public IDataResult<List<Document>> GetList()

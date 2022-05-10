@@ -26,10 +26,15 @@ namespace Business.Concrete
             return new SuccessResult(Messages.SliderAdded);
         }
 
-        public IResult Delete(Slider slider)
+        public IResult Delete(int sliderId)
         {
-            _sliderDal.Delete(slider);
-            return new SuccessResult(Messages.SliderDeleted);
+            var slider = _sliderDal.Get(x => x.SliderId == sliderId);
+            if (slider != null)
+            {
+                _sliderDal.Delete(slider);
+                return new SuccessResult(Messages.SliderDeleted);
+            }
+            return new ErrorResult("Hata Oluştu");
         }
 
         public IDataResult<Slider> GetById(int sliderId)

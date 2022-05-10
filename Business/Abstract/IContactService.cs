@@ -13,6 +13,8 @@ namespace Business.Abstract
         IDataResult<List<Contact>> GetList();
         IResult Add(Contact contact);
         IResult Update(Contact contact);
-        IResult Delete(Contact contact);
+        IResult Delete(int contactId);
+
+        IDataResult<Contact> GetById(int contactId);
     }
 }

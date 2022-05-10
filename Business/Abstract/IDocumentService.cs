@@ -13,6 +13,8 @@ namespace Business.Abstract
         IDataResult<List<Document>> GetList();
         IResult Add(Document document);
         IResult Update(Document document);
-        IResult Delete(Document document);
+        IResult Delete(int documentId);
+
+        IDataResult<Document> GetById(int documentId);
     }
 }

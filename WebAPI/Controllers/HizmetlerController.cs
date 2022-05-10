@@ -7,30 +7,30 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SlidersController : ControllerBase
+    public class HizmetlerController : ControllerBase
     {
-        private ISliderService _sliderService;
+        private IHizmetlerService _hizmetlerService;
 
-        public SlidersController(ISliderService sliderService)
+        public HizmetlerController(IHizmetlerService hizmetlerService)
         {
-            _sliderService = sliderService;
+            _hizmetlerService = hizmetlerService;
         }
 
         [HttpGet("getall")]
         public IActionResult GetList()
         {
-            var result = _sliderService.GetList();
+            var result = _hizmetlerService.GetList();
             if (result.Success)
             {
-                return (Ok(result));
+                return Ok(result);
             }
-            return BadRequest(result);
+            return BadRequest(result.Message);
         }
 
         [HttpGet("getbyid")]
-        public IActionResult GetById(int sliderId)
+        public IActionResult GetById(int hizmetId)
         {
-            var result = _sliderService.GetById(sliderId);
+            var result = _hizmetlerService.GetById(hizmetId);
             if (result.Success)
             {
                 return (Ok(result));
@@ -39,9 +39,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Slider slider)
+        public IActionResult Add(Hizmet hizmet)
         {
-            var result = _sliderService.Add(slider);
+            var result = _hizmetlerService.Add(hizmet);
             if (result.Success)
             {
                 return Ok(result);
@@ -50,9 +50,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(Slider slider)
+        public IActionResult Update(Hizmet hizmet)
         {
-            var result = _sliderService.Update(slider);
+            var result = _hizmetlerService.Update(hizmet);
             if (result.Success)
             {
                 return Ok(result);
@@ -60,10 +60,10 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpDelete("{sliderId}")]
-        public IActionResult Delete(int sliderId)
+        [HttpDelete("{hizmetId}")]
+        public IActionResult Delete(int hizmetId)
         {
-            var result = _sliderService.Delete(sliderId);
+            var result = _hizmetlerService.Delete(hizmetId);
             if (result.Success)
             {
                 return Ok(result);

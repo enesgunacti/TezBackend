@@ -26,10 +26,15 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CategoryAdded);
         }
 
-        public IResult Delete(Category category)
+        public IResult Delete(int categoryId)
         {
-            _categoryDal.Delete(category);
-            return new SuccessResult(Messages.CategoryDeleted);
+            var category = _categoryDal.Get(x => x.CategoryId == categoryId);
+            if (category != null)
+            {
+                _categoryDal.Delete(category);
+                return new SuccessResult(Messages.ProductDeleted);
+            }
+            return new ErrorResult("Hata Oluştu");
         }
 
         public IDataResult<Category> GetById(int categoryId)
