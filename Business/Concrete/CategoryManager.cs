@@ -32,7 +32,7 @@ namespace Business.Concrete
             if (category != null)
             {
                 _categoryDal.Delete(category);
-                return new SuccessResult(Messages.ProductDeleted);
+                return new SuccessResult(Messages.CategoryDeleted);
             }
             return new ErrorResult("Hata Oluştu");
         }

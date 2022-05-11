@@ -12,5 +12,6 @@ namespace Entities.Concrete
         public int ContactId { get; set; }
         public string ContactName { get; set; }
         public string ContactDetail { get; set; }
+        public string ContactPicture { get; set; }
     }
 }

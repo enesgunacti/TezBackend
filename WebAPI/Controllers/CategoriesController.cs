@@ -28,9 +28,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getbyid")]
-        public IActionResult GetById(int contactId)
+        public IActionResult GetById(int categoryId)
         {
-            var result = _categoryService.GetById(contactId);
+            var result = _categoryService.GetById(categoryId);
             if (result.Success)
             {
                 return (Ok(result));
